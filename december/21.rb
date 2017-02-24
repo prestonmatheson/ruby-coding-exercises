@@ -1,7 +1,7 @@
 require 'rspec'
 
 def sentence_reverser str
-
+	str.split.reverse.*(" ")
 end
 
 describe "Sentence reverser" do
