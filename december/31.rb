@@ -1,10 +1,19 @@
 require 'rspec'
 
-# ¥
-# £
-# $
+# ¥ 114.39
+# £ 0.81
+# $ 1
 
 def currency_converter amount, location
+
+  if location == 'US'
+     "$#{amount}.00"
+  elsif location == 'Japan'
+     "¥#{amount}"
+  elsif location == 'UK'
+     "£#{amount},00"
+  end
+
 end
 
 describe 'Currency converter' do

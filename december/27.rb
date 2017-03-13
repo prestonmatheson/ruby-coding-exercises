@@ -1,6 +1,11 @@
 require 'rspec'
 
 def palindrome? word
+  if word.reverse.upcase === word.upcase
+    return true
+  else
+    return false
+  end
 end
 
 describe 'Check if a word is a palindrome' do

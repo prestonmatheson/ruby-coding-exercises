@@ -1,7 +1,10 @@
 require 'rspec'
 
 def array_converter *arrays
+  arrays.flatten.map {|i| i.to_i}
 end
+
+
 
 describe 'Combine arrays and convert strings to integers' do
   it 'can take in a variable number of arrays and return a single array' do
@@ -12,3 +15,4 @@ describe 'Combine arrays and convert strings to integers' do
     expect(array_converter(arr_1).first).to eq(1)
   end
 end
+

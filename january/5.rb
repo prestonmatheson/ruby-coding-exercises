@@ -1,6 +1,7 @@
 require 'rspec'
 
 def generate_alphabet
+  p ("a".."z").to_a
 end
 
 describe 'Alphabet generator' do

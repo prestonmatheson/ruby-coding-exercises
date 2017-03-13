@@ -2,9 +2,11 @@ require 'rspec'
 
 class String
   def total_words
+    self.scan(/[[:alpha:]]+/).count
   end
 
   def word_list
+    self.downcase.scan(/[[:alpha:]]+/).inject(Hash.new(0)) { |w, f| w[f] += 1; w}
   end
 end
 
@@ -29,3 +31,14 @@ describe 'Word Reporter' do
   end
 end
 
+#class String
+#  def total_words
+#   scan(/\w+/).count
+#  end
+#
+#  def word_list
+#   list = Hash.new(0)
+#   downcase.scan(/\w+/) { |w| list[w] += 1; w}
+#   list
+#  end
+#end
