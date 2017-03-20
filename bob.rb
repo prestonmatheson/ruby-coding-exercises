@@ -15,11 +15,11 @@ def bob
   if words == words.upcase
     puts 'Whoa, chill out!'
 
-  elsif words.downcase == 'bob'
-    puts 'Fine. Be that way!'
-      
   elsif words.split(//).last == "?"
-    puts 'Sure.'      
+    puts 'Sure.'
+     
+  elsif words.downcase == 'bob'
+    puts 'Fine. Be that way!'     
 
   else
     puts 'Whatever'
