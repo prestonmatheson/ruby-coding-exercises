@@ -27,5 +27,5 @@ random_gen = opt.sample
  elsif input == random_gen
    puts "Try again. You chose the same as the computer"
  else
-   puts "#{random_gen} beats #{input}. What a loser!"
+   puts "#{random_gen} beats #{input}. You have failed the galaxy!"
  end
