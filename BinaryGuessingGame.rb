@@ -17,7 +17,6 @@ print "pick a number between 1 and 25"
 
 @ans = arr.sample
 def guessing_game
-  continue = true
   if @input == @ans
     puts "#{@input} is equal to the computers choice of #{@ans}. Congrats!"
   else
