@@ -3,8 +3,8 @@ require 'bigdecimal'
 
 def large_number_processor num_1, num_2
   mult_me = []
-  mult_me << BigDecimal("#{num_1}")
-  mult_me << BigDecimal("#{num_2}")
+  mult_me << BigDecimal(num_1)
+  mult_me << BigDecimal(num_2)
 
   mult_me.inject(:*).to_s("F")
 end
@@ -16,3 +16,13 @@ describe 'Large number processing' do
     expect(large_number_processor(val_1, val_2)).to eq("425.14394718482513504388005529072886672947064529")
   end
 end
+
+# Jordan Hudgen's solution
+
+# require 'rspec'
+# require 'bigdecimal'
+
+# def large_number_processor num_1, num_2
+#   (BigDecimal(num_1) * BigDecimal(num_2)).to_s("F")
+#   
+# end
