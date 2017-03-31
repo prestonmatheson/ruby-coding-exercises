@@ -16,6 +16,8 @@ print "pick a number between 1 and 25"
 @input = gets.chomp.to_i
 
 @ans = arr.sample
+
+
 def guessing_game
   if @input == @ans
     puts "#{@input} is equal to the computers choice of #{@ans}. Congrats!"
@@ -39,6 +41,7 @@ def guessing_game
 end
 
 guessing_game
+
 
 # Bonus
 
