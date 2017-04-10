@@ -11,23 +11,20 @@ def table arr
 
   long = longest.length + 2
   
-  (long + 2).times do 
+  (long + 4).times do 
     print "*"
   end
 
   puts ""
 
   n_times.times do |n|
-    print "*"
-    print arr[n].center(long, ' ')
-    print "*"
-    
-    puts ""
+    puts "* #{arr[n].center(long, ' ')} *"
   end
 
-  (long + 2).times do 
+  (long + 4).times do 
     print "*"
   end
+    puts ""
 end
 
 table(arr)
