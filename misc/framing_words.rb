@@ -1,27 +1,27 @@
 # write a method that takes a list of strings and prints them, one per line, in a rectangular frame. 
 
-arr = ["Hello", "World", "in", "a", "frame", "yeeeeeeeeettttt"]
+arr = ["Hello", "World", "in", "a", "frame"]
 
 
 def table arr
 
-  n_times = arr.count
+  n = arr.count
 
-  longest = arr.max_by(&:length)
+  longest_element = arr.max_by(&:length)
 
-  long = longest.length + 2
+  buffer = longest_element.length + 2
   
-  (long + 4).times do 
+  (buffer + 4).times do 
     print "*"
   end
 
   puts ""
 
-  n_times.times do |n|
-    puts "* #{arr[n].center(long, ' ')} *"
+  n.times do |n|
+    puts "* #{arr[n].center(buffer, ' ')} *"
   end
 
-  (long + 4).times do 
+  (buffer + 4).times do 
     print "*"
   end
     puts ""
