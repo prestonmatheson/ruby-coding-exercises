@@ -117,7 +117,7 @@ def morse word
   puts "/"
 end
 
-str = "thank you daren you are the best"
+str = "Hello in morse"
 
 @words = str.split(/ /).to_a
 
@@ -134,7 +134,9 @@ end
 # translate each morse-letter to the corisponding letter in english
 # join letters by words to form a sentence
 
-morse = " - .... .- -. -.- / -.-- --- ..- / -.. .- .-. . -. / -.-- --- ..- / .- .-. . / - .... . / -... . ... - /"
+"....   .   .-..   .-..   ---   / ..   -.   / --   ---   .-.   ...   .   /"
+
+morse = "....   .   .-..   .-..   ---   / ..   -.   / --   ---   .-.   ...   .   /"
 
 def to_english morse
   letters = morse.downcase.split(/ /).to_a

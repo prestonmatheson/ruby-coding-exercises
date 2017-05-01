@@ -5,7 +5,7 @@ def arr_querry(x, i)
   # call arr_querry recursively to go on if not.
   left = (i - 1)
   right = (i + 1)
-
+  pry
   if x[left] > x[i] && x[right] > x[i]
     if x[left] > x[right]
       puts x[left]
@@ -16,8 +16,8 @@ def arr_querry(x, i)
   elsif x[right] > x[i]
     puts x[right]
   else 
-    arr_querry(x, left)
     arr_querry(x, right)
+    arr_querry(x, left) 
   end
 end
 x = [1,4,3,2,5,7]
