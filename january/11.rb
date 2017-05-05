@@ -1,7 +1,10 @@
 require 'rspec'
 
 class Array
-  def odd_selector
+  def odd_selector(self)
+    self.each do |x|
+      puts x if x % 2 == 1 
+    end
   end
 end
 

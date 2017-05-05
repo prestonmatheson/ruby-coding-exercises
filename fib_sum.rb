@@ -16,4 +16,4 @@ def fib_sum n
   end
 end
 
-fib_sum(100)
+fib_sum(10)

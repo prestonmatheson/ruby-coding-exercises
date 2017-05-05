@@ -2,6 +2,7 @@ require 'pry'
 puts "Welcome to Black Jack!"
 ##### bet loop
 loop do
+
   @you_win = false
   @bust = false
   @tie = false
@@ -10,9 +11,11 @@ loop do
   @dealer_hand = []
   @money ||= 100
   @continue = ""
+
   puts "Press 'ctrl + c' if you want to quit."
   puts "You have $#{@money}. How much would you like to bet today?"
   @bet = gets.chomp.to_i
+
   case
     when @bet % 5 == 0
       if @bet > @money
@@ -28,11 +31,12 @@ loop do
     else puts "Sorry, bets have to be increments of 5."
     break
   end
+
   2.times do
     @init = @cards.sample
     case @init
       when "A"
-        print "Would you like 1 or 11?"
+        print "Your current hand value is #{@hand.sum}"
         ace_val = gets.chomp.to_i
         if ace_val == 1 || ace_val == 11
           @hand << ace_val
@@ -45,7 +49,9 @@ loop do
         @hand << @init.to_i
     end
   end
+
   p "Your hand values are #{@hand}"
+
   until @continue == "stand" || @hand.sum >= 21
     print "Hit or Stand?"
     @continue = gets.chomp.downcase
@@ -77,7 +83,9 @@ loop do
       @bust = true
     end
   end
+
   puts "The dealer's turn is..."
+
   until @dealer_hand.sum >= 17
     dealer = @cards.sample
     case dealer
@@ -93,7 +101,9 @@ loop do
         @dealer_hand << hit.to_i
     end
   end
+
   puts "The dealers hand sum is #{@dealer_hand.sum}"
+
   if @bust == true
     puts "You lost...better luck next time!"
   elsif @dealer_hand.sum > 21 && @hand.sum <= 21
@@ -121,7 +131,7 @@ loop do
     puts "Your remaining balance is #{@money}"
   end
   if @money == 0
-    puts "Game over! you are out of money!"
+    puts "Game over! You are out of money!"
     break
   end
 end
