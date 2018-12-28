@@ -1,6 +1,12 @@
 require 'rspec'
 
 def array_converter *arrays
+  new_array = []
+  arrays.each do |array|
+    new_array << array
+  end
+  single_array = new_array.flatten
+  single_array.map { |x| x.to_i }
 end
 
 describe 'Combine arrays and convert strings to integers' do
