@@ -1,5 +1,13 @@
 require 'rspec'
 
+class String 
+
+  def commentize
+    self.prepend("# ")
+  end
+
+end
+
 class ContentController
   def initialize(word)
     @word = word
