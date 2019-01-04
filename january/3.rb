@@ -2,9 +2,21 @@ require 'rspec'
 
 class String
   def total_words
+    parsed_words = self.gsub(/[^abcdefghijklmnopqrstuvwxyz ]/,'')
+    count = parsed_words.split.count
   end
 
   def word_list
+    word_list_count = {}
+    parsed_words = self.gsub!(/[^abcdefghijklmnopqrstuvwxyz ]/,'').split
+    parsed_words.each do |word|
+      unless word_list_count.include? word
+        word_list_count["#{word}"] = 1
+      else
+        word_list_count["#{word}"] += 1
+      end
+    end
+    return word_list_count
   end
 end
 
