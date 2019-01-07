@@ -7,6 +7,7 @@ menu = {
 }
 
 def daily_special hash
+  hash.values.flatten.sample
 end
 
 describe 'Nested hash element selector' do
