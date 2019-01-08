@@ -1,6 +1,10 @@
 require 'rspec'
+require 'bigdecimal'
 
 def large_number_processor num_1, num_2
+  big_dec_1 = BigDecimal.new(num_1)  
+  big_dec_2 = BigDecimal.new(num_2)
+  (big_dec_1 * big_dec_2).to_s('F')
 end
 
 describe 'Large number processing' do
