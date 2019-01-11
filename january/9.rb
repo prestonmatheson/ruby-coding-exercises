@@ -1,6 +1,9 @@
 require 'rspec'
 
 def fraction_calculator fraction_one, fraction_two, operator
+  parsed_f_one = fraction_one.to_r
+  parsed_f_two = fraction_two.to_r
+  (parsed_f_one).method(operator).(parsed_f_two).to_s
 end
 
 describe 'Fraction multiplication' do
