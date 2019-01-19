@@ -1,6 +1,10 @@
 require 'rspec'
 
+
 def title_builder headers, data
+  hash = {}
+  headers.map{|x| hash[x] = data[headers.find_index(x)]}
+  return hash
 end
 
 describe 'Hash builder' do

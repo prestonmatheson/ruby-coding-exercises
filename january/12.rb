@@ -1,6 +1,12 @@
 require 'rspec'
 
 def pseudo_random num
+  fiber = Fiber.new do
+    # num.times do |num|
+    #   Fiber.yield num
+    # end
+    Fiber.yield num
+  end
 end
 
 describe 'Psudeo random number generator' do
