@@ -1,5 +1,16 @@
 require 'rspec'
 
+class Array
+  def value_included? comp_itm
+    self.each do |hash|
+      if hash.values.include? comp_itm
+        return true
+      end
+    end
+    false
+  end
+end
+
 describe 'Collection search' do
   it 'checks to see if a value is included in any number of hashes nested inside an array' do
     books = [
