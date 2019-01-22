@@ -1,6 +1,15 @@
 require 'rspec'
 
+
 def multiplication_table num
+  hash = {}
+  range = 1..num.to_a
+  # go through each number in the range and create an array of 10 values num * (1..10)
+  range.each do |val|
+    arr = (1..10).to_a
+    arr = arr.map{|x| x * num }
+    hash[val] = arr
+  end
 end
 
 describe 'Multiplication table' do
