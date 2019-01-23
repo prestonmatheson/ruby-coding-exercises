@@ -1,5 +1,40 @@
 require 'rspec'
 
+module Tippy
+    class Builder
+        def initialize hash
+            @total = hash[:total]
+            @gratuity = hash[:gratuity]
+        end
+
+        def generate
+            percent = parse_string @gratuity
+            total_gratuity = total_gratuity percent
+            add_to_total total_gratuity
+        end
+
+        private
+            def parse_string str
+                case str.to_s.downcase
+                when 'standard'
+                    0.18
+                when 'high'
+                    0.25
+                when 'low'
+                    0.15
+                else
+                    (str.to_f / 100)
+                end
+            end
+            def total_gratuity gratuity_perc
+                @total * gratuity_perc
+            end
+            def add_to_total gratuity
+                return @total + gratuity
+            end
+    end
+end
+
 describe 'Tip Generator' do
   it 'Accurately generates a tip given string or integer input' do
     test_1 = Tippy::Builder.new(total: 100, gratuity: '23.5').generate
@@ -20,3 +55,7 @@ describe 'Tip Generator' do
   end
 end
 
+# 15%
+# 20%
+# 25%
+# custom
