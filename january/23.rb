@@ -1,5 +1,15 @@
 require 'rspec'
 
+class User
+  attr_accessor :name, :email
+  def initialize
+    if block_given? 
+      puts "block given" 
+      yield self 
+    end  
+  end
+end
+
 describe 'Block User' do
   it 'Allows a user to be created with a block of values' do
     user = User.new do |u|
