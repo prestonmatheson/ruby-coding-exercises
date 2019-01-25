@@ -1,5 +1,15 @@
 require 'rspec'
 
+def lineup_generator(arr, &block)
+  count = arr.count
+  count_arr = (1..count).to_a
+  array = []
+  count_arr.each do |x|
+    array << yield(x, arr[(x - 1)])
+  end
+  return array
+end
+
 describe 'Lineup Generator' do
   before do
     @players = ['Altuve', 'Correa', 'Bregman']
