@@ -18,6 +18,11 @@ def url_parser str
       )
     )
   }ix
+  if !!str.match(regex)
+    str.gsub(regex) {|link| "<a href='#{link}' target='_blank'>#{link}</a>"}
+  else
+    str
+  end
 end
 
 describe 'URL Parser' do
