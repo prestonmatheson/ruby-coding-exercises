@@ -23,6 +23,7 @@ def image_tag path, optional_args=nil
   end
   return str
 end
+
 describe 'Cloned image_tag' do
   before do
     @image_path = "https://devcamp.com/some_pic.jpg"
