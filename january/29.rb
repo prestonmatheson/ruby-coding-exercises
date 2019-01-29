@@ -1,6 +1,13 @@
 require 'rspec'
-
+# Use case for the Null Object pattern is for situations that the methods may not allways be present...ie if current_user? do xyz else zyx. Can muttle code, but the Null Object Pattern can helpt clean that up.
 class NullClass
+  def method_missing(name, *args, &block)
+    self
+  end
+
+  def respond_to_missing?(name, include_private = false)
+    name.to_s || super
+  end
 end
 
 describe 'Null class' do
