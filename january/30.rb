@@ -1,10 +1,22 @@
 require 'rspec'
 
 class ApiConnector
+  attr_accessor :attempts, :errors
+
+  def initialize
+    @attempts = 0
+    @errors = []
+  end
+
   def send_data
     begin
+      #increments @attempts every time a connection is attempted
+      @attempts += 1
       api_call
     rescue Errno::ETIMEDOUT => e
+      #takes the error assigned to e above and adds it to the @errors array
+      @errors << e
+      retry if @attempts < 3
     end
   end
 
