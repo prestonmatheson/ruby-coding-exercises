@@ -1,7 +1,7 @@
 require 'rspec'
 
 def big_data_parser num
-  (1..num).map do |i|
+  (1..num).lazy.map do |i|
     i ** 2
   end.first(5)
 end
