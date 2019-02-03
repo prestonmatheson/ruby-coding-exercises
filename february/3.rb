@@ -1,9 +1,15 @@
 require 'rspec'
-
+require "csv"
 # File needs to be created with the name and path of:
 # support/generated_file.csv
 
 def csv_tool headers, data
+  CSV.open("support/generated_file.csv", "wb") do |csv|
+    csv << headers
+    data.each do |row|
+      csv << row
+    end
+  end
 end
 
 describe 'CSV generator' do
