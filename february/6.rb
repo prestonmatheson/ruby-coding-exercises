@@ -1,5 +1,11 @@
 require 'rspec'
 
+def find_element arrs, element
+  arrs.each do |arr|
+    return arr if arr[1] == element
+  end
+end
+
 describe 'Find Element' do
   it 'returns an array from a nested array if the second element equals the queried element' do
     players = [
