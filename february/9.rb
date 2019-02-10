@@ -1,6 +1,8 @@
 require 'rspec'
 
 def weird_alphabet
+  alph = ('a'..'z').to_a
+  alph << 'k'
 end
 
 describe 'Weird Alphabet' do
