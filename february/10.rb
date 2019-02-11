@@ -1,7 +1,15 @@
 require 'rspec'
 
 def total_sorter invoices
+  invoices.sort_by {|invoice| invoice[1]}.reverse
 end
+Invoice = Struct.new(:name, :total, :category)
+google = Invoice.new('Google', 500, 'Marketing')
+amazon = Invoice.new('Amazon', 1000, 'eCommerce')
+yahoo = Invoice.new('Yahoo', 300, 'Marketing')
+
+invoices = [google, amazon, yahoo]
+total_sorter invoices
 
 describe 'Invoice sorter' do
   it 'sorts a set of invoices by their totals' do
