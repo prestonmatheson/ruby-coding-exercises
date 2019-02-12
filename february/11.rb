@@ -1,6 +1,13 @@
 require 'rspec'
 
 def state_sorter states
+  state_content_hash = {}
+  states.each do |state|
+    letters =  state.gsub(/[^a-zA-Z ]/, "")
+    state_content_hash[state] = letters
+  end
+  sorted_hash_arr = state_content_hash.sort_by {|key, val| val}
+  sorted_hash_arr.to_h.keys
 end
 
 describe 'State Data Sorter' do
